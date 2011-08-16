@@ -1,0 +1,48 @@
+= Welcome to Gander
+
+Simplify your Views with Gander.
+
+= Installation
+
+  gem install gander
+
+= Usage
+
+  <% table_for @users do |table| -%>
+    <% table.caption "User Listing" -%>
+
+    <% table.header -%>
+      <% table.heading "First Name" -%>
+      <% table.heading "Last Name" -%>
+      <% table.heading "Email Address" -%>
+    <% end -%>
+
+    <% table.body -%>
+      <% table.data :first_name -%>
+      <% table.data :last_name -%>
+      <% table.data :email_address -%>
+    <% end -%>
+  <% end -%>
+
+  GENERATES
+
+  <table class="gander user">
+     <caption>User Listing</caption>
+
+     <thead>
+       <tr>
+         <th>First Name</th>
+         <th>Last Name</th>
+         <th>Email Address</th>
+       </tr>
+     </thead>
+
+     <tbody>
+       <!-- One row for each user -->
+       <tr>
+         <td>John</td>
+         <td>Smith</td>
+         <td>jsmith@example.com</td>
+       </tr>
+     </tbody>
+  </table>
